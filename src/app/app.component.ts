@@ -12,5 +12,5 @@ import { ProductsComponent } from "./products/products.component";
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'ClothesStore';
+  title = 'Fake Store';
 }
