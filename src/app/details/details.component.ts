@@ -3,11 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 import { GetDetailsService } from '../get-details.service';
 import { IProducts } from '../iproducts';
 import { StarRatingComponent } from "../star-rating/star-rating.component";
+import { LoadingComponent } from "../loading/loading.component";
 
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [StarRatingComponent],
+  imports: [StarRatingComponent, LoadingComponent],
   templateUrl: './details.component.html',
   styleUrl: './details.component.css'
 })

@@ -1,9 +1,75 @@
+@if (products) {
 <section class="py-5">
+  <div class="product-filter d-flex py-3 gap-3 align-items-center">
+    <button
+      aria-label="filter products button"
+      (click)="filterAnimationFunc()"
+      class="btn"
+    >
+      <i class="fa-solid fa-list"></i>
+    </button>
+    <ul class="filter-list m-0" [class.active]="filterNavAnimation" id="myTab" role="tablist">
+      <li>
+        <button
+          data-bs-toggle="tab"
+          class="btn"
+          value="all"
+          (click)="getCategoryFilter($event)"
+        >
+          All
+        </button>
+      </li>
+      <li>
+        <button
+          data-bs-toggle="tab"
+          class="btn"
+          value="electronics"
+          (click)="getCategoryFilter($event)"
+        >
+          electronics
+        </button>
+      </li>
+      <li>
+        <button
+         data-bs-toggle="tab"
+          class="btn"
+          value="jewelery"
+          (click)="getCategoryFilter($event)"
+        >
+          jewelery
+        </button>
+      </li>
+      <li>
+        <button
+         data-bs-toggle="tab"
+          class="btn"
+          value="men's clothing"
+          (click)="getCategoryFilter($event)"
+        >
+          men's clothing
+        </button>
+      </li>
+      <li>
+        <button
+         data-bs-toggle="tab"
+          class="btn"
+          value="women's clothing"
+          (click)="getCategoryFilter($event)"
+        >
+          women's clothing
+        </button>
+      </li>
+    </ul>
+  </div>
   <div class="row row-cols-1 row-cols-lg-3 gy-4">
-    @for (product of products; track $index) {
+    @for (product of products; track $index) { @if(categoryValue ==
+    product.category || categoryValue == "all"){
     <div class="col">
       <app-card [productObject]="product" />
     </div>
-    }
+    } }
   </div>
 </section>
+} @else{
+<app-loading />
+}
