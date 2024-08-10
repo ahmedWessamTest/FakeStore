@@ -1,0 +1,37 @@
+@if (productDetails) {
+  <div class="border border-black bg-light rounded">
+    <div class="header-image">
+      <img [src]="productDetails.image || ''" class="w-100 d-block" alt="" />
+    </div>
+  </div>
+  <div class="description py-5">
+    <div class="row gy-4">
+      <div class="col-lg-8">
+        <div>
+          <h2>{{ productDetails.title || "not have title" }}</h2>
+          <span>{{ productDetails.category || "not have category" }}</span>
+          <span>{{ productDetails.description || "not have description" }}</span>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <ul>
+          <li>Category: {{ productDetails.category || "not have category" }}</li>
+          <li>
+            Rating:
+            <app-star-rating
+              [rating]="productDetails.rating.rate.toString() || '0'"
+            />
+            {{ productDetails.rating.rate }}
+          </li>
+          <li>Like: {{ productDetails.rating.count || "0" }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+}
+@else {
+    <div class="loading">
+      <span class="d-block">loading</span>
+    </div>
+}
+

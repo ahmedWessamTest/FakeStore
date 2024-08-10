@@ -1,0 +1,42 @@
+header {
+    height: 75vh;
+    background-image: url("../../assets/images/image_2.jpg");
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.25rem;
+  }
+  @media screen and (min-width: 992px) {
+    header {
+    justify-content: end;
+  }
+  }
+  .content {
+    background-color: rgb(255 255 255 / 80%);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+  }
+@media screen and (min-width: 992px) {
+  .content {
+    width: 50%;
+  }
+}
+.content hr {
+  width: 50px;
+  margin: .625rem auto;
+}
+.content h1 {
+  margin: 0;
+  font-size: 3.75rem;
+
+}
+.content p {
+  font-size: 1.125rem;
+}

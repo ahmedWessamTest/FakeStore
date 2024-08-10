@@ -1,0 +1,19 @@
+<div class="card border-0 h-100" [routerLink]="['/home', productObject.id]">
+  <span class="img-hover d-block">
+    <img width="300" height="300" class="m-auto" [src]="productObject.image" alt="" />
+    <div class="card-overlay">
+      <div class="people">
+        <i class="fa-regular fa-heart"></i>
+        <span class="d-block"></span>
+      </div>
+    </div>
+  </span>
+  <div class="card-body text-center">
+    <span class="card-category">{{ productObject.category }}</span>
+    <h4 class="mt-1">{{ productObject.title }}</h4>
+    <app-star-rating [rating]="productObject.rating.rate.toString()" />
+    <span class="card-price d-block mt-1">
+      &dollar;{{ productObject.price }}
+    </span>
+  </div>
+</div>
